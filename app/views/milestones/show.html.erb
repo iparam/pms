@@ -1,0 +1,29 @@
+<div class="grid_16">
+<div class="grid_12" style="font-size:15px" >
+  <%=link_to(@project.name,@project )%> > <%= @milestone.name %> 
+</div>
+<div class="grid_4">
+<%= link_to "Add Task", new_milestone_task_path(@milestone,:project_id=>@project.id) %>
+</div>
+</div>
+<%= clearing_span %>
+  <p style="margin:20px;color:#aaa">
+   <%= @milestone.description %>
+  </p>
+  
+
+<h3 style="margin-top:10px">Task</h3>
+<div class="listing" style="margin-top:10px">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start date</th>
+    <th>End date</th>
+        <th>Status</th>
+    <th width="40"></th>
+  </tr>
+  <%= render :partial=>"tasks/task",:collection=>@tasks%>
+
+</table>  
+</div>

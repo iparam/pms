@@ -1,0 +1,27 @@
+<h1>Listing tasks</h1>
+<div class="listing">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Status</th>
+    <th width="40"></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= link_to task.name,milestone_task_path(task.milestone,task,:project_id=>task.milestone.project.id) %></td>
+    <td><%= task.description %></td>
+    <td><%= task.start_date %></td>
+    <td><%= task.end_date %></td>
+    <td><%= task.status %></td>
+    <td><%= link_to image_tag('edit_10.png'), edit_milestone_task_path(task.milestone,task,:project_id=>task.milestone.project.id) %>
+    <%= link_to image_tag('delete_10.png'), milestone_task_path(task.milestone,task,:project_id=>task.milestone.project.id), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+

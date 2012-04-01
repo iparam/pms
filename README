@@ -1,0 +1,29 @@
+Project has many Milestone
+Milestone belongs_to Project
+Milestone has many task
+task belongs_to milestone
+Project
+1) Name
+2) Description
+3) Start Date 
+4) End Date
+
+Milestone
+1) Name
+2) Description
+3) Start Date 
+4) End Date
+5) project_id
+
+Task
+1) Name
+2) Description
+3) Start Date
+4) End Date
+5) Status 
+6) milestone_id
+
+
+
+
+

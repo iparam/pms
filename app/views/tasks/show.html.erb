@@ -1,0 +1,18 @@
+<div class="grid_16">
+<div class="grid_12" style="font-size:15px" >
+  <%=link_to(@project.name,@project )%> > <%=link_to @milestone.name,milestone_tasks_path(@milestone,:project_id=>@project.id) %> > <%= @task.name %> 
+</div>
+<div class="grid_4">
+<%= link_to 'Edit Task', edit_milestone_task_path(@milestone,@task,:project_id=>@project.id) %> 
+</div>
+</div>
+<%= clearing_span %>
+  <p style="margin:20px;color:#aaa">
+   <%= @task.description %>
+  </p>
+  
+
+
+
+
+

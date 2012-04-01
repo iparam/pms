@@ -1,0 +1,85 @@
+<div class="grid_16">
+<h1 class="grid_12">
+  <%= @project.name %> <span style="color:gray">(<%=@project.start_date %>) From (<%= @project.end_date%>)</span>
+</h1>
+<div class="grid_4">
+<%= link_to "Add Milestone", new_project_milestone_path(@project) %>
+</div>
+</div>
+<%= clearing_span %>
+  <p style="margin:20px;color:#aaa">
+   <%= @project.description %>
+  </p>
+  
+<h3>Members</h3>
+<ul style="margin-top:10px">
+<% @project.users.each do |user| %>
+<li><%= user.email %></li>
+<% end %>
+</ul>
+
+<h3 style="margin-top:10px">Milestone</h3>
+<div class="listing" style="margin-top:10px">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th width="40"></th>
+  </tr>
+  <%= render :partial=>"milestones/milestone",:collection=>@milestones%>
+
+</table>  
+</div>
+<!--<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @project.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @project.end_date %>
+</p>
+<p>
+  <b>Manager</b>
+  <%= @project.manager.name %>
+</p>
+<h2>Users</h2>
+<% @project.users.each do |user| %>
+<%= user.name %>
+<% end %>
+
+
+
+
+<h2>Milestone</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%= render :partial=>"milestones/milestone",:collection=>@milestones%>
+
+</table>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>-->

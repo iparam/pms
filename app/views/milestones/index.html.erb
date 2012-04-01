@@ -1,0 +1,20 @@
+<h1>Listing milestones</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%= render :partial=>"milestone",:collection=>@milestones%>
+
+</table>
+
+<br />
+
+<%= link_to 'New Milestone', new_project_milestone_path(@project) %>
+<%= link_to 'Back to project', project_path(@project) %>

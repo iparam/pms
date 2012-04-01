@@ -1,0 +1,9 @@
+<tr>
+    <td><%=link_to(task.name,milestone_task_path(@milestone,task,:project_id=>@project.id)) %></td>
+    <td><%= task.description %></td>
+    <td><%= task.start_date %></td>
+    <td><%= task.end_date %></td>
+    <td><%= task.status %></td>
+    <td><%= link_to image_tag('edit_10.png'), edit_milestone_task_path(@milestone,task,:project_id=>@project.id) %>
+    <%= link_to image_tag('delete_10.png'), milestone_task_path(@milestone,task,:project_id=>@project.id), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
